@@ -1,7 +1,36 @@
+:root {
+    /* Variáveis para cores */
+    --cor-primaria: #0A1747;
+    --cor-secundaria: #9D4D61;
+    --cor-texto: #000;
+    --cor-fundo: #fff;
+
+    /* Fonte */
+    --fonte-padrao: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    /* Espaçamentos */
+    --padding-padrao: clamp(1rem, 2vw, 2.5rem);
+}
+
+[data-theme="dark"] {
+    --cor-fundo: #121212;
+    --cor-texto: #E0E0E0;
+    --cor-primaria: #fff;
+    --cor-secundaria: #62A1FC;
+    --cor-destaque: #1E1E1E;
+    --cor-rodapé: #62A1FC;
+}
+
 * {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
+    font-family: var(--fonte-padrao);
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
 }
 
 .perfil-container {
@@ -14,13 +43,13 @@
 
 .detalhes, .sobre, .perfil-foto {
     max-width: 30%;
-    padding: 40px;
+    padding: var(--padding-padrao);
     padding-top: 0;
     line-height: 200%;
 }
 
 .perfil-foto {
-    background-color: #9D4D61;
+    background-color: var(--cor-secundaria);
     text-align: center;
     color: #fff;
 }
@@ -39,15 +68,18 @@
 
 button {
     border-radius: 80px;
-    border: 2px solid #9D4D61;
-    background-color: #fff;
+    border: 2px solid var(--cor-secundaria);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
     width: 40%;
     height: 40px;
     margin-top: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: #9D4D61;
+    background-color: var(--cor-secundaria);
     color: #fff;
 }
 
@@ -58,21 +90,23 @@ button:hover {
 
 h1 {
     text-align: center;
-    color: #0A1747;
+    color: var(--cor-primaria);
+    font-size: clamp(1.5rem, 5vw, 3rem);
 }
-h2{
-    color: #0A1747;
+h2 {
+    color: var(--cor-primaria);
     margin-bottom: 20px;
+    font-size: clamp(1.2rem, 4vw, 2rem);
 }
 
 header {
     text-align: center;
-    padding: 20px;
+    padding: var(--padding-padrao);
     line-height: 40px;
 }
 
 footer {
-    background-color: #0A1747;
+    background-color: var(--cor-rodapé);
     color: #fff;
     padding: 1%;
     text-align: center;
@@ -89,7 +123,7 @@ footer {
 
     .detalhes, .sobre, .perfil-foto {
         max-width: 80%;
-        padding: 20px;
+        padding: var(--padding-padrao);
     }
 }
 
@@ -102,7 +136,7 @@ footer {
 
     .detalhes, .sobre, .perfil-foto {
         max-width: 100%;
-        padding: 20px;
+        padding: var(--padding-padrao);
         margin: 30px;
     }
 

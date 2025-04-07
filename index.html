@@ -10,6 +10,7 @@
     <header>
         <h1>Mariane Lima</h1>
         <p>Aluna do IFSP-Câmpus Bragança Paulista </p>
+        <button id="modo-escuro">🌙 Dark Mode</button>
     </header>
     
     <main>
@@ -56,6 +57,24 @@
     <footer>
         <p>&copy; 2025 - Todos os direitos reservados.</p>
     </footer>
+
+    <!--Js Dark Mode-->
+    <script>
+        const botao = document.getElementById("modo-escuro");
+        const imagem = document.getElementById("eu");
+
+        botao.addEventListener("click", () => {
+         const temaAtual = document.documentElement.getAttribute("data-theme");
+
+        if (temaAtual === "dark") {
+        document.documentElement.removeAttribute("data-theme");
+        imagem.src = "imagens/me.jpeg"; // imagem clara
+         } else {
+        document.documentElement.setAttribute("data-theme", "dark");
+        imagem.src = "imagens/me-dark.jpeg"; // imagem escura
+         }
+    });
+    </script>   
     
 
 
